@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmitOnError": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "dist"
+  }
+}
