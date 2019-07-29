@@ -1,28 +1,29 @@
-<h1 align="center">Head Room</h1>
+# Head Room
 
-<div align="center">
+[![Latest version](https://img.shields.io/npm/v/headroom.svg)](https://npm.im/headroom)
+![npm downloads](https://img.shields.io/npm/dt/headroom.svg)
+[![License](https://img.shields.io/github/license/kidonng/headroom.svg)](LICENSE)
 
-[![Latest version](https://img.shields.io/npm/v/headroom.svg?style=for-the-badge)](https://npm.im/headroom)
-![npm downloads](https://img.shields.io/npm/dt/headroom.svg?style=for-the-badge)
-[![License](https://img.shields.io/github/license/kidonng/headroom.svg?style=for-the-badge)](LICENSE)
-
-</div>
-
-The same old headroom simplified.
-
-Looking for a complete solution? Try [the original one](https://github.com/WickyNilliams/headroom.js).
+Minimal implementation of [headroom.js](https://github.com/WickyNilliams/headroom.js) ([demo](https://codesandbox.io/s/headroom-demo-0lgux)).
 
 ## Install
 
-- npm: `npm i headroom`
-- Yarn: `yarn add headroom`
+### Package Managers
+
+- `npm i headroom`
+- `yarn add headroom`
+
+### ES Modules
+
+- `import { headroom } from 'https://cdn.jsdelivr.net/npm/headroom'`
+- `import { headroom } from 'https://unpkg.com/headroom'`
 
 ## Usage
 
-**NOTE:** Default style doesn't deal with `z-index`.
+**NOTE** Default style doesn't deal with `z-index` hassles.
 
 ```js
-import headroom from 'headroom'
+import { headroom } from 'headroom'
 
 // Selector
 headroom('header')
@@ -33,13 +34,12 @@ headroom()
 // Element
 headroom(document.querySelector('header'))
 
-const stop = hearoom('header',
 // Default options
-{
-  // Use default style (https://github.com/kidonng/headroom/blob/master/index.js#L11-L24)
+const stop = headroom('.headroom', {
+  // Use default style (https://github.com/kidonng/headroom/blob/master/index.ts#L10-L25)
   useStyle: true,
   // Debounce wait
-  wait: 100
+  wait: 50
 })
 // Stop listening
 stop()

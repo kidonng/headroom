@@ -1,7 +1,7 @@
 import { debounce } from 'lodash-es'
 
 let styleInserted = false
-const insertStyle = selector => {
+const insertStyle = (selector: string) => {
   if (!styleInserted) {
     styleInserted = true
     document.head.insertAdjacentHTML(
@@ -28,18 +28,22 @@ const insertStyle = selector => {
   }
 }
 
-export default (
-  selector = '.headroom',
-  { useStyle = true, wait = 100 } = {}
+const headroom = (
+  target: string | Element = '.headroom',
+  { useStyle = true, wait = 50 } = {}
 ) => {
-  let header
-  if (typeof selector === 'string') header = document.querySelector(selector)
-  else if (selector instanceof Element) header = selector
-  else throw new TypeError('Invalid selector')
+  let header: Element
+
+  if (typeof target === 'string') {
+    const match = document.querySelector(target)
+    if (match) header = match
+    else throw new Error('[Head Room] Selector matched none')
+
+    if (useStyle) insertStyle(target)
+  } else if (target instanceof Element) header = target
+  else throw new TypeError('[Head Room] Invalid target')
 
   let scrollY = 0
-
-  if (useStyle) insertStyle(selector)
 
   const listener = debounce(() => {
     header.classList.toggle(
@@ -50,6 +54,7 @@ export default (
       'hidden',
       header.classList.contains('unpinned') && window.pageYOffset >= scrollY
     )
+
     scrollY = window.pageYOffset
   }, wait)
 
@@ -57,3 +62,5 @@ export default (
 
   return () => document.removeEventListener('scroll', listener)
 }
+
+export { headroom }
