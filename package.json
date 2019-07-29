@@ -1,0 +1,22 @@
+{
+  "name": "headroom",
+  "version": "0.1.0",
+  "description": "The same old headroom simplified",
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kidonng/headroom.git"
+  },
+  "author": "kidonng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kidonng/headroom/issues"
+  },
+  "homepage": "https://github.com/kidonng/headroom#readme",
+  "dependencies": {
+    "lodash-es": "^4.17.15"
+  }
+}
