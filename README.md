@@ -19,6 +19,8 @@ Looking for a complete solution? Try [the original one](https://github.com/Wicky
 
 ## Usage
 
+**NOTE:** Default style doesn't deal with `z-index`.
+
 ```js
 import headroom from 'headroom'
 
