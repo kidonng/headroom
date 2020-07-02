@@ -14,9 +14,9 @@
     "lodash-es": "^4.17.15"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.3",
-    "prettier": "^1.18.2",
-    "typescript": "^3.5.3"
+    "@types/lodash-es": "4.17.3",
+    "prettier": "1.19.1",
+    "typescript": "3.9.6"
   },
   "prettier": {
     "semi": false,
